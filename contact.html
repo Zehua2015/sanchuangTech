@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosy's Art Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Header Fonts Starts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap" rel="stylesheet">
+     <!-- Header Fonts Ends-->
+    <script src="headerLoader.js" defer></script>
+    <script src="localLanguage.js" defer></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div id="contact-title" class="contact-title" data-en="Contact form" data-cn="联系我们"></div>
+    <div id="error-message" data-en="Please enter all the fields." data-cn="请确保输入框不为空"></div>
+    <div class="form">
+        <form action="POST" data-netlify="true">
+            <div class="fields" >
+                <div class="field half">
+                    <div class="text-description" data-en="Your name" data-cn="您的姓名"></div>
+                    <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="field half">
+                    <div class="text-description" data-en="Your email address" data-cn="您的电子邮箱地址 / 手机号 / 微信号"></div>
+                    <input type="text" name="contact" id="contact" placeholder="Email / Contact number" />
+                </div>
+                <div class="field">
+                    <div class="text-description" data-en="Your message" data-cn="您的联系内容"></div>
+                    <textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+                </div>
+            </div>
+            <ul class="actions">
+                <li><input type="submit" value="Send Message" class="button primary" /></li>
+            </ul>
+        </form>
+    </div>
+    
+    <script src="form.js"></script>
+
+</body>
+</html>
