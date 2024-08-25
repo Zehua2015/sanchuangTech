@@ -1,7 +1,14 @@
 function switchLanguage(language) {
     document.querySelectorAll('[data-en]').forEach(element => {
-        element.innerText = element.getAttribute('data-' + language);
-    });
+        // element.innerText = element.getAttribute('data-' + language);
+
+    if (element.tagName.toLowerCase() === 'input' && element.type === 'submit') {
+        element.value = element.getAttribute('data-' + language); // 更新 value 属性
+    } else {
+        element.innerText = element.getAttribute('data-' + language); // 更新 innerText
+    }
+});
+
     localStorage.setItem('language', language);
     if (language == 'cn') {
         document.getElementById('logo-nihonga').style.top = '70%'
