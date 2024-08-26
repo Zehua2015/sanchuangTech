@@ -236,6 +236,7 @@ nav ul li a:hover {
     position: absolute;
     left: 10%;
     width: 80%;
+    font-size: 25px;
 }
 
 .description {
