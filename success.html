@@ -25,18 +25,18 @@
 
     <script>
         // JavaScript to get and display the current date
-        // const currentDateElement = document.getElementById('currentDate');
-        // const currentDate = new Date();
-        // currentDateElement.textContent = currentDate.toDateString();
+        const currentDateElement = document.getElementById('currentDate');
+        const currentDate = new Date();
+        currentDateElement.textContent = currentDate.toDateString();
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const referrer = document.referrer;
-            console.log('Referrer:', referrer);
-            if (!referrer.includes('contact.html')) {
-                console.log('Referrer:', referrer);
-                window.location.href = 'error.html';
-            }
-        });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const referrer = document.referrer;
+        //     console.log('Referrer:', referrer);
+        //     if (!referrer.includes('contact.html')) {
+        //         console.log('Referrer:', referrer);
+        //         window.location.href = 'error.html';
+        //     }
+        // });
 
     </script>
 </body>
