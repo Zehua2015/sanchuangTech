@@ -17,7 +17,7 @@
 <body>
     <div id="header-container"></div>
     <br><br><br>
-    <div class="description" data-en="Thank you! Your message has been recorded.">halo</div>
+    <div class="description" data-en="Thank you! Your message has been recorded." data-cn="感谢您！您的信息已被记录。" data-jp="ありがとうございます！メッセージが記録されました。"></div>
     <div class="description">
         Date:
         <span id="currentDate"></span>
@@ -31,7 +31,9 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const referrer = document.referrer;
+            console.log('Referrer:', referrer);
             if (!referrer.includes('contact.html')) {
+                console.log('Referrer:', referrer);
                 window.location.href = 'error.html';
             }
         });
