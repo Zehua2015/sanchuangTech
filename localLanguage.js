@@ -1,5 +1,5 @@
 function switchLanguage(language) {
-    document.querySelectorAll('[data-en]').forEach(element => {
+    document.querySelectorAll('[data-cn]').forEach(element => {
         // element.innerText = element.getAttribute('data-' + language);
 
     if (element.tagName.toLowerCase() === 'input' && element.type === 'submit') {
