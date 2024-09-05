@@ -1,13 +1,5 @@
 <header>
-    <!-- <div id="logo">
-        RoSy's
-        Art Studio
-    </div> -->
-    <div id="logo" data-en="RoSy's Art Studio" data-cn="RoSy 的画室" data-jp="RoSyのアートスタジオ"></div>
-    <div id="logo-nihonga" data-en="Nihonga" data-cn="日本画" data-jp="日本画"></div>
-    <div id="logo-crayon" data-en="Crayon and Oil Pastel" data-cn="蜡笔与油画棒画" data-jp="クレヨンなど"></div>
-    <div id="logo-caricature" data-en="Caricature" data-cn="漫画" data-jp="カリカチュア"></div>
-    <div id="logo-about" data-en="About Rosy" data-cn="关于Rosy" data-jp="Rosyについて"></div>
+    <div id="logo"><img id="logo-img" src="images/SCT_logo.png" alt="logo-img"><img id="logo-text" src="images/SCT_text_short.png" alt="logo-text"></div>
     <div class="language">
         <ul class="style1">
             <li><a href="#" onclick="switchLanguage('en')">English</a></li>
@@ -20,22 +12,114 @@
             <li><a href="#" onclick="switchLanguage('jp')">日</a></li>
         </ul>
     </div>
+    <!-- This is for normal header (with larger screens like PC) -->
     <nav id="header-row">
         <ul>
-            <li><a href="/" data-en="Home" data-cn="主页" data-jp="ホーム"></a></li>
-            <li><a href="about.html" data-en="About" data-cn="关于" data-jp="About"></a></li>
-            <!-- <li><a href="/">Gallery</a></li> -->
-
-            <li class="dropdown">
-                <a href="" data-en="Gallery" data-cn="画廊" data-jp="ギャラリー"></a>
-                <ul class="dropdown-content">
-                    <li><a href="nihonga.html" data-en="Nihonga" data-cn="日本画" data-jp="日本画"></a></li>
-                    <li><a href="crayon.html" data-en="Crayon and Oil Pastel" data-cn="蜡笔与油画棒画" data-jp="クレヨンなど"></a></li>
-                    <li><a href="caricature.html" data-en="Caricature" data-cn="漫画" data-jp="カリカチュア"></a></li>
-                </ul>
+            <li>
+                <a href="javascript:void(0);" class="header-index" data-en="About" data-cn="关于" data-jp="概要"></a>
+                <div class="hover-box">
+                    <div class="hover-box-title" data-en="About" data-cn="关于" data-jp="概要"> </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/Company_info.jpg" alt="Company Information">
+                        <div class="combo-text">
+                            <a href="" data-en="Company Overview" data-cn="公司信息" data-jp="会社情報"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/team_intro.jpg" alt="Team Introduction">
+                        <div class="combo-text">
+                            <a href="" data-en="Team Introduction" data-cn="团队介绍" data-jp="チーム紹介"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/ceo_msg.jpg" alt="Message from the Chairman">
+                        <div class="combo-text">
+                            <a href="" data-en="Message from the Chairman" data-cn="董事长致辞" data-jp="社長からの挨拶"></a>
+                        </div>
+                    </div>
+                </div>
             </li>
-
-            <li><a href="contact.html" data-en="Contact" data-cn="联系" data-jp="お問い合わせ"></a></li>
+            
+            <li>
+                <a href="javascript:void(0);" class="header-index" data-en="Services" data-cn="服务" data-jp="サービス"></a>
+                <div class="hover-box">
+                    <div class="hover-box-title" data-en="Services" data-cn="服务" data-jp="サービス"></div>
+                    <div class="hover-box-combo">
+                        <img src="/images/tech_service.jpg" alt="Technical Services">
+                        <div class="combo-text">
+                            <a href="" data-en="Technical Services" data-cn="技术服务" data-jp="技術サービス"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/innovation.jpg" alt="Innovation Solutions">
+                        <div class="combo-text">
+                            <a href="" data-en="Innovation Solutions" data-cn="创新解决方案" data-jp="イノベーションソリューション"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/management.jpg" alt="Project Management">
+                        <div class="combo-text">
+                            <a href="" data-en="Project Management" data-cn="项目管理" data-jp="プロジェクト管理"></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li>
+                <a href="javascript:void(0);" class="header-index" data-en="Contact" data-cn="联系" data-jp="連絡先"></a>
+                <div class="hover-box">
+                    <div class="hover-box-title" data-en="Contact" data-cn="联系" data-jp="連絡先"></div>
+                    <div class="hover-box-combo">
+                        <img src="/images/contact_info.jpg" alt="Contact Information">
+                        <div class="combo-text">
+                            <a href="" data-en="Contact Information" data-cn="联系信息" data-jp="連絡情報"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/contact_form.jpg" alt="Contact Form">
+                        <div class="combo-text">
+                            <a href="" data-en="Contact Form" data-cn="联系表格" data-jp="連絡フォーム"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/costomer_support.jpg" alt="Customer Support">
+                        <div class="combo-text">
+                            <a href="" data-en="Customer Support" data-cn="客户支持" data-jp="カスタマーサポート"></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li>
+                <a href="javascript:void(0);" class="header-index" data-en="Topic" data-cn="议题" data-jp="トピック"></a>
+                <div class="hover-box">
+                    <div class="hover-box-title" data-en="Topic" data-cn="议题" data-jp="トピック"></div>
+                    <div class="hover-box-combo">
+                        <img src="/images/japan.jpg" alt="Future of Sino-Japanese Technology Cooperation">
+                        <div class="combo-text">
+                            <a href="" data-en="Future of Sino-Japanese Technology Cooperation" data-cn="中日技术合作前景" data-jp="日中技術協力の将来"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/merger.jpg" alt="Global M&A Trends">
+                        <div class="combo-text">
+                            <a href="" data-en="Global M&A Trends" data-cn="国际兼并收购" data-jp="グローバルM&A動向"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/tech_park.jpg" alt="High-Tech Industrial Park Development">
+                        <div class="combo-text">
+                            <a href="" data-en="High-Tech Industrial Park Development" data-cn="高新技术产业园" data-jp="ハイテク産業園の発展"></a>
+                        </div>
+                    </div>
+                    <div class="hover-box-combo">
+                        <img src="/images/copyright.jpg" alt="Intellectual Property Protection & Promotion">
+                        <div class="combo-text">
+                            <a href="" data-en="Intellectual Property Protection & Promotion" data-cn="知识产权保护与推广" data-jp="知的財産保護と促進"></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </nav>
 

@@ -1,31 +1,12 @@
 body {
     background-color:whitesmoke;
     font-family: "Arsenal SC", sans-serif;
-    height: 100%;
-    margin: 0;
 }
 
 /* Header part starts */
 header {
-    position: absolute;
-    /* background-color: whitesmoke; */
-    color: black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    
-    /* font-family: "Arsenal SC", sans-serif; */
-    font-weight: 400;
-    font-style: normal;
-    height: 10vh;
-    left: 5%;
-    width: 85%;
-    z-index: 1;
-}
-
-header-row {
     position: relative;
-    /* background-color: whitesmoke; */
+    background-color: whitesmoke;
     color: black;
     text-align: center;
     display: flex;
@@ -37,28 +18,60 @@ header-row {
     height: 10vh;
     left: 5%;
     width: 85%;
-    z-index: 1;
 }
 
-
-#logo-text {
-     transform: scaleX(1.7) translateX(15%);
-
-}
 #logo {
     position: absolute;
-    transform-origin: left top;
     top: 50%;
     /* width: 50%; */
-    /* transform: translateY(-50%);  */
+    transform: translateY(-50%);
     font-size: 38px;
     text-align: left;
-    left: 0%;  
-    display: flex;
-    flex-direction: row;
-    transform: scale(0.15);
-    
-    
+    left: 5%;  
+}
+
+#logo-nihonga {
+    display: none;
+    position: absolute;
+    top: 50%;
+    /* width: 50%; */
+    transform: translateY(-50%);
+    font-size: 38px;
+    text-align: left;
+    left: 5%;  
+}
+
+#logo-crayon {
+    display: none;
+    position: absolute;
+    top: 50%;
+    /* width: 50%; */
+    transform: translateY(-50%);
+    font-size: 38px;
+    text-align: left;
+    left: 5%;  
+}
+
+#logo-caricature {
+    display: none;
+    position: absolute;
+    top: 50%;
+    /* width: 50%; */
+    transform: translateY(-50%);
+    font-size: 38px;
+    text-align: left;
+    left: 5%;  
+}
+
+#logo-about {
+    display: none;
+    position: absolute;
+    top: 50%;
+    /* width: 50%; */
+    transform: translateY(-50%);
+    font-size: 38px;
+    text-align: left;
+    left: 5%;  
 }
 
 .language {
@@ -82,16 +95,12 @@ nav ul li {
     margin-top: -20px;
 }
 
-nav ul li a {
+nav ul li a{
     color: black;
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
     transition: color 1s;
-}
-
-nav ul li .header-index {
-    font-size: 25px;
 }
 
 nav ul li a:hover {
@@ -122,7 +131,7 @@ nav ul li a:hover {
 
         /* Header - Dropdown content part */
 
-        /* nav ul li .dropdown-content {
+        nav ul li .dropdown-content {
             display: none;
             position: absolute;
             margin-top: 10px;
@@ -154,66 +163,6 @@ nav ul li a:hover {
         nav ul li.dropdown:hover .dropdown-content {
             display: block;
         }
-
-        nav ul li {
-            /* background-color: #0056b3; */
-            padding-bottom: 20px;
-        }
-
-        .hover-box {
-            display: flex;
-            position: absolute;
-            flex-direction: row;
-            justify-content: flex-end;
-            padding-right: 20px;
-            margin-top: 20px;
-            left: 0;
-            width: 100%;
-            height: 0vh;
-            /* visibility: hidden; */
-            overflow: hidden;
-            /* height: 20vh; */
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            transition: height 0.5s ease-out;
-            z-index: 1000;
-        }
-
-        #header-row ul li:hover .hover-box {
-            height: 20vh;
-        }
-
-        .hover-box-title {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 10%;
-            text-align: left;
-            font-size: 38px;
-        }
-
-        .hover-box-combo {
-            top: 0;
-            width: 20%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden;
-            visibility: hiddden;
-            /* height: 0; */
-        }
-        .hover-box-combo img {
-            position: relative;
-            width: 65%;
-            height: auto;
-            top: 10%;
-        }
-        nav ul li .hover-box-combo .combo-text a {
-            position: relative;
-            top: 20px;
-            font-size: 20px;
-        }
-
 /* Header part ends */
 
 /* poster part starts */
@@ -407,81 +356,9 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
-
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* New for Sanchuang Tech */
-/* ##################################################################################### */
-        /* 设置 container 的大小为屏幕的大小 */
-        .container {
-            width: 100vw; /* 100% 的视口宽度 */
-            height: 100vh; /* 100% 的视口高度 */
-            position: relative; /* 确保图片可以在容器内定位 */
-            overflow: hidden; /* 防止图片溢出容器 */
-            padding-top: 0;
-            z-index: 0;
-        }
-
-        /* 设置图片样式 */
-        .container img {
-            width: 100%; /* 使图片宽度填满容器 */
-            height: 100%; /* 使图片高度填满容器 */
-            object-fit: cover; /* 确保图片按比例填满容器 */
-            opacity: 0.5; /* 设置图片透明度 */
-            position: absolute; /* 绝对定位以覆盖整个容器 */
-            top: 0;
-            left: 0;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1; /* above the background image */
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-        }
-        .text-huge {
-            position: absolute;
-            left: 50%;
-            font-size: 300px;
-            top: 15%
-        }
-
-        .text-medium {
-            position: absolute;
-            left: 75%;
-            font-size: 150px;
-            top: 30%;
-        }
-        
-        .text-small {
-            position: absolute;
-            left: 60%;
-            font-size: 150px;
-            top: 60%;
-        }
-
-
-        
-
-
-
-
-
-
-
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/*                  FOR SMALLER SCRREN */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
-/* ##################################################################################### */
+.button:hover {
+    background-color: #0056b3;
+}
 
 /* Menu display disabled with larger screen */
 @media (min-width: 660px) {
