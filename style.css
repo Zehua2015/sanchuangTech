@@ -1,8 +1,52 @@
+@font-face {
+    font-family: 'Arsenal SC';
+    src: url('/fonts/ArsenalSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arsenal SC';
+    src: url('/fonts/ArsenalSC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('/fonts/NotoSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ma Shan Zheng';
+    src: url('/fonts/MaShanZheng-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* @font-face {
+    font-family: 'Arsenal SC';
+    src: url('/fonts/ArsenalSC-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arsenal SC';
+    src: url('/fonts/ArsenalSC-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+} */
+
 body {
     background-color:whitesmoke;
     font-family: "Arsenal SC", sans-serif;
     height: 100%;
     margin: 0;
+    padding-bottom: 20px;
 }
 
 /* Header part starts */
@@ -169,7 +213,7 @@ nav ul li a:hover {
             margin-top: 20px;
             left: 0;
             width: 100%;
-            height: 0vh;
+            height: 0px;
             /* visibility: hidden; */
             overflow: hidden;
             /* height: 20vh; */
@@ -177,17 +221,18 @@ nav ul li a:hover {
             border-radius: 10px;
             transition: height 0.5s ease-out;
             z-index: 1000;
+            align-items: center;
         }
 
         #header-row ul li:hover .hover-box {
-            height: 20vh;
+            height: 180px;
         }
 
         .hover-box-title {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 10%;
+            left: 7%;
             text-align: left;
             font-size: 38px;
         }
@@ -200,7 +245,8 @@ nav ul li a:hover {
             align-items: center;
             overflow: hidden;
             visibility: hiddden;
-            /* height: 0; */
+            border-radius: 5px;
+            transition: background-color 0.5s ease;
         }
         .hover-box-combo img {
             position: relative;
@@ -208,10 +254,14 @@ nav ul li a:hover {
             height: auto;
             top: 10%;
         }
-        nav ul li .hover-box-combo .combo-text a {
+        nav ul li .hover-box-combo .combo-text a{
             position: relative;
-            top: 20px;
+            top: 0px;
             font-size: 20px;
+        }
+
+        .hover-box-combo:hover {
+            background-color: rgba(167, 167, 167, 0.5);
         }
 
 /* Header part ends */
@@ -358,6 +408,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: start;
+    text-align: start;
 }
 
 input[type="text"],
@@ -414,26 +466,35 @@ textarea {
 /* ##################################################################################### */
 /* New for Sanchuang Tech */
 /* ##################################################################################### */
-        /* 设置 container 的大小为屏幕的大小 */
+        /* Set container cover the screen */
         .container {
-            width: 100vw; /* 100% 的视口宽度 */
-            height: 100vh; /* 100% 的视口高度 */
-            position: relative; /* 确保图片可以在容器内定位 */
-            overflow: hidden; /* 防止图片溢出容器 */
+            width: 100vw;
+            height: 100vh;
+            position: relative; 
+            overflow: hidden;
             padding-top: 0;
             z-index: 0;
         }
 
-        /* 设置图片样式 */
         .container img {
-            width: 100%; /* 使图片宽度填满容器 */
-            height: 100%; /* 使图片高度填满容器 */
-            object-fit: cover; /* 确保图片按比例填满容器 */
-            opacity: 0.5; /* 设置图片透明度 */
-            position: absolute; /* 绝对定位以覆盖整个容器 */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            position: absolute;
             top: 0;
             left: 0;
         }
+
+        /* .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); 
+            z-index: 1; 
+        } */
 
         .content {
             position: relative;
@@ -450,10 +511,14 @@ textarea {
         }
 
         .text-medium {
+            font-family: 'Ma Shan Zheng';
             position: absolute;
-            left: 75%;
-            font-size: 150px;
+            transform: translateX(-50%);
+            left: 50%;
+            font-size: 60px;
             top: 30%;
+            white-space: nowrap;
+            /* color: white; */
         }
         
         .text-small {
@@ -463,12 +528,320 @@ textarea {
             top: 60%;
         }
 
+        .cta-button {
+            background-color: white; 
+            color: rgb(75, 94, 102); 
+            border: 1px solid rgb(75, 94, 102);
+            padding: 20px 40px;
+            font-size: 25px;
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background-color: rgb(75, 94, 102);
+            color: white; 
+            border: 2px solid white;
 
+        }
         
 
+/* For information.html page */
+        .half-container {
+            width: 100vw;
+            height: 50vh;
+            position: relative;
+            overflow: hidden;
+            padding-top: 0;
+            z-index: 0;
+        }
+        
+        .mask-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            opacity: 0.5; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            /* Setting mask */
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+        .content-container {
+            display: block;
+            text-align: center;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+            width: 70%;
+            margin: 0 auto;
+            height: auto;
+
+        }
+        
+        .title-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .shadow-box {
+            /* display: flex; */
+            position: relative;
+            /* justify-content: center; */
+            align-items: center;
+            
+        }
+        .shadow {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 70px;
+            opacity: 0.1;
+        }
+        .subtitle-box {
+            padding-top: 50px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .about-us {
+            display: grid;
+            text-align: left;
+            grid-template-columns: 1fr 1fr;
+            background-color: rgb(183, 183, 183);
+            opacity: 1;
+            margin: 0 auto;
+            border-radius: 10px ;
+            font-size: 25px;
+            padding: 20px;
+        }
+
+        .about-us-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .about-us-right img {
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .business-scope {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            font-size: 25px;
+        }
+        .business-scope a{
+            color: black;
+        }
+
+        .scope {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .scope img {
+            transition: opacity 0.3s ease;
+        }
+        
+        .scope:hover img{
+            opacity: 0.5;
+        }
+        
+        .img-right-bottom {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 85%;
+            position: absolute;
+            right: 33px;
+            bottom: 15px;
+            opacity: 1;
+            font-size: 35px;
+            z-index: 1;
+        }
+
+        .business-scope img {
+            width: 90%;
+            height: auto;
+            border-radius: 10px;
+            opacity: 0.8;
+        }
+    
+        .full-box {
+            text-align: left;
+            background-color: rgb(183, 183, 183);
+            opacity: 1;
+            margin: 0 auto;
+            border-radius: 10px ;
+            font-size: 25px;
+            padding: 20px;
+        }
 
 
+/* For team.html Page */
+.about-us {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(183, 183, 183);
+    opacity: 1;
+    margin: 0 auto;
+    border-radius: 10px ;
+    font-size: 25px;
+    padding: 20px;
+}
 
+.team-box {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr 2fr;
+    background-color: rgb(183, 183, 183);
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+.team-box img {
+    height: 270px;
+    width: auto;
+}
+
+.hr-line {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: white;
+}
+
+
+/* For message.html Page */
+.text-box {
+    background-color: rgba(175, 172, 172, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.text-ending {
+    text-align: end;
+}
+
+/* For merger.html Page */
+
+.sqaure-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.square {
+    display: flex;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    background-color: lightblue;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.square:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.subtitle-box-start {
+    text-align: start;
+    font-size: 25px;
+}
+
+.subtitle-box-start::before {
+    content: "·";
+    font-size: 1.5em; 
+    margin-right: 8px;
+    /* color: black; */
+}
+
+.no-box {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.hr-line-black {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: black;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.flash {
+    animation: flash 2s ease-in-out 1;
+}
+
+/* For Contact Page */
 
 
 

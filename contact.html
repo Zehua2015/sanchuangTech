@@ -3,46 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosy's Art Studio</title>
+    <title>Sanchuang Technology</title>
+    <style>
+        html,
+        body,
+        #container {
+          width: 100%;
+          height: 500px;
+        } 
+        .custom-content-marker {
+            position: relative;
+            width: 25px;
+            height: 34px;
+        }
+
+        .custom-content-marker img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* .custom-content-marker .close-btn {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 15px;
+            box-shadow: -1px 1px 1px rgba(10, 10, 10, .2);
+        }
+
+        .custom-content-marker .close-btn:hover{
+            background: #666;
+        } */
+    </style>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
     <link rel="icon" href="images/r.png" type="image/png">
-    <!-- Header Fonts Starts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap" rel="stylesheet">
-     <!-- Header Fonts Ends-->
     <script src="headerLoader.js" defer></script>
     <script src="localLanguage.js" defer></script>
 </head>
 <body>
     <div id="header-container"></div>
-
-    <div id="contact-title" class="contact-title" data-en="Contact form" data-cn="联系我们" data-jp="お問い合わせフォーム"></div>
-    <div id="error-message" data-en="Please enter all the fields." data-cn="请确保输入框不为空" data-jp="すべてのフィールドに入力してください。"></div>
-    <div class="form">
-        <form method="POST" data-netlify="true" action="/success.html">
-        <!-- <form  action="/success.html"> -->
-            <div class="fields" >
-                <div class="field half">
-                    <div class="text-description" data-en="Your name" data-cn="您的姓名" data-jp="お名前"></div>
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div class="field half">
-                    <div class="text-description" data-en="Your email address" data-cn="您的电子邮箱地址 / 手机号 / 微信号" data-jp="メールアドレス / 電話番号 / WeChat ID"></div>
-                    <input type="text" name="contact" id="contact" placeholder="Email / Contact number" />
-                </div>
-                <div class="field">
-                    <div class="text-description" data-en="Your message" data-cn="您的联系内容" data-jp="メッセージ内容"></div>
-                    <textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
-                </div>
-            </div>
-            <ul class="actions">
-                <li><input type="submit" value="Send Message" class="button primary" data-en="Send Message" data-cn="发送信息" data-jp="メッセージを送る" /></li>
-            </ul>
-        </form>
+    <div class="half-container">
+        <img class="mask-img" src="/images/beijing_west.jpg" alt="Half Background Image">
+        <div class="title-box">
+            <span data-en="Contact Us" data-cn="联系我们" data-jp="お問い合わせ"></span>
+        </div>
     </div>
-    
-    <script src="form.js"></script>
 
+    <div class="content-container">
+        <div id="contact-title" class="contact-title" data-en="Contact form" data-cn="联系我们" data-jp="お問い合わせフォーム"></div>
+        <div class="shadow-box">
+            <div class="subtitle-box-start" data-cn="公司地址：北京市丰台区广安路9号院3号楼14层1402（国投财富广场3号楼15A02）" data-en="Company Address: Room 1402, Building 3, No. 9 Guang'an Road, Fengtai District, Beijing (Room 15A02, Building 3, Guotou Fortune Plaza)" data-jp="会社住所：北京市豊台区広安路9号院3号楼14階1402号（国投財富広場3号楼15A02号）"></div>
+            <div class="subtitle-box-start" data-cn="TEL：     （+86-10）-6310-0067" data-en="TEL: (+86-10)-6310-0067" data-jp="TEL：（+86-10）-6310-0067"></div>
+            <div class="subtitle-box-start" data-cn="FAX：     （+86-10）-6310-0076" data-en="FAX: (+86-10)-6310-0076" data-jp="FAX：（+86-10）-6310-0076"></div>
+        </div>        
+
+        <!-- 地图容器 -->
+        <div id="container"></div>
+
+        <!-- 设置安全密钥，保留中括号 -->
+        <script type="text/javascript">
+            window._AMapSecurityConfig = {
+                securityJsCode: "「bdb3803766118a02272a54594d141858」",
+            };
+        </script>
+
+        <!-- 引入高德地图 API -->
+        <script
+            type="text/javascript"
+            src="https://webapi.amap.com/maps?v=2.0&key=e71a207bf9ce8e49e926e581555fb86b"
+        ></script>
+
+        <!-- 地图初始化代码 -->
+        <script type="text/javascript">
+            var position = new AMap.LngLat(116.323175,39.89123);
+
+            window.onload = function() {
+                var map = new AMap.Map("container", {
+                    zoom: 17, // 缩放级别
+                    center: position // 地图中心点（天安门坐标）
+                });
+                var markerContent = '' +
+                    '<div class="custom-content-marker">' +
+                    '   <img src="//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png">' +
+                    '   <div class="close-btn" onclick="clearMarker()">X</div>' +
+                    '</div>';
+
+                var marker = new AMap.Marker({
+                    position: position,
+                    // 将 html 传给 content
+                    content: markerContent,
+                    // 以 icon 的 [center bottom] 为原点
+                    offset: new AMap.Pixel(-13, -30)
+                });
+
+                // 将 markers 添加到地图
+                map.add(marker);
+
+                // 清除 marker
+                // function clearMarker() {
+
+                //     map.remove(marker);
+                // }
+            };
+        </script>
+        <br>
+        <br>
+    </div>
 </body>
 </html>
