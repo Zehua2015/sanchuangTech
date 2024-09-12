@@ -10,9 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menuIcon');
     const menu = document.getElementById('menu');
 
-    menuIcon.addEventListener('click', function() {
-        menu.classList.toggle('active'); // Toggle Menu
-        menuIcon.classList.toggle('active');
+        menuIcon.addEventListener('click', function() {
+            menu.classList.toggle('active'); // Toggle Menu
+            menuIcon.classList.toggle('active');
+        });
     });
-    });
+
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        switchLanguage(savedLanguage);
+    })
 });
