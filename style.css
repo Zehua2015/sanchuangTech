@@ -396,16 +396,19 @@ nav ul li a:hover {
 }
 
 .form {
-    position: absolute;
+    position: relative;
     display: block;
     /* align-items: left; */
     /* text-align: left; */
+    /* min-height: 1500px; */
     left: 30%;
     width: 40%;
 }
 
 form {
-    display: flex;
+    display: block;
+    position: relative;
+    /* min-height: 1500px; */
     flex-direction: column;
     gap: 0px;
 }
@@ -585,6 +588,7 @@ textarea {
         .content-container {
             display: block;
             text-align: center;
+            min-height: 500px;
             /* display: flex;
             flex-direction: column;
             justify-content: center;
